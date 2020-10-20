@@ -12,14 +12,14 @@ function createEmployeeRecord(arr) {
   return employee
 }
 
-// takes an arrays of arrays and converts each array into an employee record
+// converts each nested array into an employee record
 // returns an array of these new record objects
 function createEmployeeRecords(nestedArr) {
   return nestedArr.map(arr => createEmployeeRecord(arr))
 }
 
 // takes an employee record object and a date stamp
-// returns the updated employee record
+// updates and returns the employee record
 function createTimeInEvent(employee, stamp) {
   let d = stamp.split(" ")[0]
   let h = parseInt(stamp.split(" ")[1])
@@ -40,7 +40,7 @@ function createTimeOutEvent(employee, stamp) {
 }
 
 // takes an employee record object and a date
-// returns the employee's total hours worked for the given date
+// returns the employee's total hours worked on that date
 function hoursWorkedOnDate(employee, stamp) {
   let timeInObj = employee.timeInEvents.find(element => element.date == stamp)
   let timeOutObj = employee.timeOutEvents.find(element => element.date == stamp)
@@ -69,5 +69,5 @@ function findEmployeeByFirstName(arr, name) {
 // takes an array of employee records
 // returns the sum of all pay owed for all of those employees
 function calculatePayroll(arr) {
-  return arr.reduce( (tot, emp) => (allWagesFor(emp) + tot), 0  )
+  return arr.reduce( (tot, employee) => (allWagesFor(employee) + tot), 0  )
 }

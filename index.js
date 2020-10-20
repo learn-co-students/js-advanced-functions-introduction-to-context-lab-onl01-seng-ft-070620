@@ -1,4 +1,3 @@
-pry = require('pryjs')
 // takes an array with 4 elements
 // creates and returns a JS object with various key-val pairs
 function createEmployeeRecord(arr) {

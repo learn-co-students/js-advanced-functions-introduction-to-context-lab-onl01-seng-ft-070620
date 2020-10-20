@@ -1,6 +1,6 @@
 # JavaScript Advanced Functions: Introduction to Context
 
-## Learning Goals
+## Learning Goals 
 
 - Define the term "record"
 - Define the term "record-oriented programming"
